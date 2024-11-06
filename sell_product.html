@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ขายสินค้า</title>
+    <link rel="stylesheet" href="sell.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <button id="backButton">กลับ</button>
+        <h1>ลงขายสินค้า</h1>
+        <div class="user-icon" id="userIcon">
+            <i class="fa-solid fa-user" onclick="toggleMenu()"></i>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="member_details.html" onclick="showMemberInfo()">ข้อมูลสมาชิก</a>
+                <a href="member_dashboard.html">สินค้าของคุณ</a>
+                <a href="order_history.html">ดูประวัติการสั่งซื้อ</a>
+                <a href="#" id="logoutButton">ออกจากระบบ</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <form id="sellForm" class="form-container">
+            <label for="productName">ชื่อสินค้า:</label>
+            <input type="text" id="productName" name="productName" required>
+
+            <label for="productPrice">ราคา:</label>
+            <input type="number" id="productPrice" name="productPrice" required>
+
+            <label for="productAmount">จำนวน:</label>
+            <input type="number" id="productAmount" name="productAmount" required>
+
+            <label for="productUnit">หน่วย:</label>
+            <input type="text" id="productUnit" name="productUnit" required>
+
+            <label for="productDetails">รายละเอียดสินค้า:</label>
+            <textarea id="productDetails" name="productDetails" required></textarea>
+
+            <label for="productPhoto">รูป:</label>
+            <input type="file" id="productPhoto" name="productPhoto" accept="image/*" required>
+
+            <label for="address">ที่อยู่:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="category">หมวดหมู่:</label>
+            <select id="category" name="category" required>
+                <option value="ผัก">ผัก</option>
+                <option value="ผลไม้">ผลไม้</option>
+            </select>
+
+            <button type="submit" class="submit-btn">บันทึก</button>
+        </form>
+    </div>
+    <script src="sell_product.js">
+    </script>
+    <style>
+        .user-icon {
+            position: relative;
+            /* ทำให้เมนูอยู่ด้านล่างไอคอน */
+            cursor: pointer;
+            /* เปลี่ยน cursor เมื่อเลื่อนไปที่ไอคอน */
+        }
+
+        .user-icon i {
+            font-size: 30px;
+            /* ปรับขนาดไอคอน */
+            color: white;
+            /* สีของไอคอน */
+            margin-left: -100px;
+            /* ให้ไอคอนมีระยะห่างจากขอบซ้าย */
+        }
+
+        .user-menu {
+            position: absolute;
+            top: 40px;
+            /* ตำแหน่งของเมนู */
+            right: 0;
+            /* จัดให้เมนูอยู่ด้านขวา */
+            background-color: #fff;
+            border: 1px solid #9bcb88;
+            border-radius: 5px;
+            padding: 10px;
+            width: 150px;
+            /* ขนาดของกล่องเมนู */
+            z-index: 10;
+            /* ทำให้เมนูอยู่ด้านบน */
+        }
+
+        .user-menu.hidden {
+            display: none;
+            /* ซ่อนเมนูเมื่อไม่ต้องการแสดง */
+        }
+
+        .user-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .user-menu li {
+            padding: 8px;
+            /* เพิ่มระยะห่างระหว่างรายการ */
+            cursor: pointer;
+            /* เปลี่ยน cursor เมื่อเลื่อนไปที่รายการ */
+        }
+
+        .user-menu li:hover {
+            background-color: #f0f0f0;
+            /* เปลี่ยนสีเมื่อเอาเมาส์ไปทับ */
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2 2px 10px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            /* ขนาดกล่องเมนู */
+            z-index: 1;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</body>
+
+</html>

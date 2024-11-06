@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายการสั่งซื้อของคุณ</title>
+    <link rel="stylesheet" href="orders.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="uploads/logo.png" alt="Logo" class="logo">
+        <h1 class="page-title">รายการขาย</h1>
+        <div class="user-icon" id="userIcon">
+            <i class="fa-solid fa-user" onclick="toggleMenu()"></i>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="member_details.html" onclick="showMemberInfo()">ข้อมูลสมาชิก</a>
+                <a href="member_dashboard.html">สินค้าของคุณ</a>
+                <a href="order_list.html">รายการขาย</a>
+                <a href="order_history.html">รายการสั่งซื้อ</a>
+                <a href="login.html" id="logoutButton">ออกจากระบบ</a>
+            </div>
+        </div>
+    </div>
+    <button id="backButton">กลับ</button>
+
+    <div id="orderHistoryContainer">
+        <div id="orderTableContainer"></div>
+    </div>
+
+    <script src="order_lists.js"></script>
+
+    <style>
+        .user-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .user-icon i {
+            font-size: 30px;
+            color: white;
+            margin-left: -100px;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2 2px 10px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            z-index: 1;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</body>
+
+</html>

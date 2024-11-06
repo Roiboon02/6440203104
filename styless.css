@@ -1,0 +1,90 @@
+body {
+    background-color: #9bcb88;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5a6d3d;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.header input {
+    width: 60%;
+    padding: 8px;
+    border: 2px solid #9bcb88;
+    border-radius: 5px;
+}
+
+.header button {
+    padding: 10px;
+    background-color: #9bcb88;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header button:hover {
+    background-color: #7fa66d;
+}
+
+.product-details {
+    display: flex;
+    align-items: center;
+    /* จัดตำแหน่งกลางแนวตั้ง */
+}
+
+.product-image {
+    max-width: 300px;
+    /* ปรับขนาดรูปภาพให้เหมาะสม */
+    height: auto;
+    /* รักษาสัดส่วน */
+    margin-right: 20px;
+    /* ช่องว่างระหว่างรูปภาพและข้อมูลสินค้า */
+}
+
+.product-info {
+    flex-grow: 1;
+    /* ขยายให้ข้อมูลสินค้าใช้พื้นที่ที่เหลือ */
+}
+
+form {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input,
+form select {
+    width: 10%;
+    padding: 8px;
+    border: 2px solid #9bcb88;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+form button {
+    width: 20%;
+    padding: 10px;
+    background-color: #9bcb88;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #7fa66d;
+}

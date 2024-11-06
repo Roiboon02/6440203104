@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+    background: linear-gradient(115deg, #9bcb88 20%, #7fa66d 80%);
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+    text-align: center;
+}
+
+.form-container img.logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-container input:focus {
+    border-color: #7fa66d;
+    outline: none;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background: #7fa66d;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+    background: #7fa66d;
+}
+
+.link-container {
+    display: flex;
+    justify-content: space-between;
+    /* จัดให้ทั้งสองลิงก์อยู่ห่างกัน */
+    margin-top: 15px;
+    /* ระยะห่างด้านบน */
+}
+
+.form-container a.register-link,
+.form-container a.index-link {
+    font-size: 14px;
+    color: #3498db;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}

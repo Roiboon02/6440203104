@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    text-align: center;
+    /* จัดตัวหนังสือให้อยู่ตรงกลางทั้งหมด */
+}
+
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 0;
+}
+
+#receiptContainer {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* จัดตัวหนังสือในกล่องใบเสร็จให้อยู่ตรงกลาง */
+}
+
+#receiptContainer p {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+#receiptContainer p span {
+    font-weight: bold;
+    color: #000;
+}
+
+#backButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    /* จัดปุ่มให้อยู่ตรงกลาง */
+}
+
+#backButton:hover {
+    background-color: #45a049;
+}
+
+.receipt-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
+
+.logo {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto 20px;
+    text-align: center;
+}

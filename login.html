@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="logins.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="loginForm">
+                <label for="email">อีเมล:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">รหัสผ่าน:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">ล็อกอิน</button>
+            </form>
+            <div class="link-container">
+                <a href="index.html" class="index-link">กลับไปหน้าแรก</a>
+                <a href="register.html" class="register-link">สมัครสมาชิก</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const response = await fetch('login.php', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+            if (result.success) {
+                localStorage.setItem('user', JSON.stringify(result.user));
+                if (result.user.role === 'admin') {
+                    window.location.href = 'admin.html';
+                } else {
+                    window.location.href = 'dashboard.html';
+                }
+            } else {
+                alert(result.message);
+            }
+        });
+    </script>
+</body>
+
+</html>

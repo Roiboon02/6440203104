@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียดสินค้า</title>
+    <link rel="stylesheet" href="pds.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="uploads/logo.png" alt="Logo" class="logo">
+        <button id="backButton">กลับ</button>
+        <h1 class="page-title">รายละเอียดสินค้า</h1> <!-- เพิ่มชื่อหน้า -->
+        <div class="header-right">
+            <button id="loginButton">ล็อกอิน</button>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <div class="product-image">
+            <img id="productImage" src="" alt="Product Image">
+        </div>
+        <div class="product-info">
+            <h2 id="productName"></h2>
+            <p id="productPrice" class="price"></p>
+            <p id="productAmount"></p>
+            <p id="productUnit"></p>
+            <p id="productDescription"></p>
+            <div class="buy-button-container">
+                <button id="buyButton" class="buy-button">ซื้อ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="product_details.js"></script>
+</body>
+
+</html>

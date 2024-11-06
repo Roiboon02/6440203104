@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="dm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="uploads/logo.png" alt="Logo" class="logo">
+        <div class="search-category">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button id="searchButton">ค้นหา</button>
+        </div>
+        <div class="user-icon" id="userIcon">
+            <i class="fa-solid fa-user" onclick="toggleMenu()"></i>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="admin_add.html">เพิ่มผลิตภัณฑ์</a>
+                <a href="admin_members.html">ข้อมูลสมาชิก</a>
+                <a href="admin_history.html">ประวัติการสั่งซื้อ</a>
+                <a href="#" id="logoutButton">ออกจากระบบ</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="product-list" class="product-list"></div>
+
+    <script src="admin_script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('user'));
+
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            if (user.role !== 'admin') {
+                window.location.href = 'dashboard.html';
+                return;
+            }
+
+            document.getElementById('logoutButton').addEventListener('click', () => {
+                localStorage.removeItem('user');
+                window.location.href = 'login.html';
+            });
+
+            fetchProducts(); // ดึงข้อมูลผลิตภัณฑ์
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.classList.toggle('show');
+        }
+    </script>
+    <style>
+        .user-icon {
+            position: relative;
+            /* ทำให้เมนูอยู่ด้านล่างไอคอน */
+            cursor: pointer;
+            /* เปลี่ยน cursor เมื่อเลื่อนไปที่ไอคอน */
+        }
+
+        .user-icon i {
+            font-size: 30px;
+            /* ปรับขนาดไอคอน */
+            color: white;
+            /* สีของไอคอน */
+            margin-left: -100px;
+            /* ให้ไอคอนมีระยะห่างจากขอบซ้าย */
+        }
+
+        .user-menu {
+            position: absolute;
+            top: 40px;
+            /* ตำแหน่งของเมนู */
+            right: 0;
+            /* จัดให้เมนูอยู่ด้านขวา */
+            background-color: #fff;
+            border: 1px solid #9bcb88;
+            border-radius: 5px;
+            padding: 10px;
+            width: 150px;
+            /* ขนาดของกล่องเมนู */
+            z-index: 10;
+            /* ทำให้เมนูอยู่ด้านบน */
+        }
+
+        .user-menu.hidden {
+            display: none;
+            /* ซ่อนเมนูเมื่อไม่ต้องการแสดง */
+        }
+
+        .user-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .user-menu li {
+            padding: 8px;
+            /* เพิ่มระยะห่างระหว่างรายการ */
+            cursor: pointer;
+            /* เปลี่ยน cursor เมื่อเลื่อนไปที่รายการ */
+        }
+
+        .user-menu li:hover {
+            background-color: #f0f0f0;
+            /* เปลี่ยนสีเมื่อเอาเมาส์ไปทับ */
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2 2px 10px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            /* ขนาดกล่องเมนู */
+            z-index: 1;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</body>
+
+</html>

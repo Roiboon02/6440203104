@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin_add.css">
+    <title>เพิ่มผลิตภัณฑ์</title>
+</head>
+
+<body>
+    <div class="header">
+        <a href="admin.html">
+            <img src="uploads/logo.png" alt="Logo" class="logo">
+        </a>
+        <div class="nav-buttons">
+            <button id="addProductButton" onclick="window.location.href='admin_add.html'">เพิ่มผลิตภัณฑ์</button>
+            <button id="viewMembersButton" onclick="window.location.href='admin_members.html'">ข้อมูลสมาชิก</button>
+            <button id="logoutButton">ออกจากระบบ</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <button id="backButton">กลับ</button>
+
+        <h2>เพิ่มผลิตภัณฑ์</h2>
+        <form id="addForm" class="form-container" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="productName">ชื่อสินค้า:</label>
+                <input type="text" id="productName" name="productName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="productPrice">ราคา:</label>
+                <input type="number" id="productPrice" name="productPrice" required>
+            </div>
+
+            <div class="form-group">
+                <label for="productAmount">จำนวน:</label>
+                <input type="number" id="productAmount" name="productAmount" required>
+            </div>
+
+            <div class="form-group">
+                <label for="productUnit">หน่วย:</label>
+                <input type="text" id="productUnit" name="productUnit" required>
+            </div>
+
+            <div class="form-group">
+                <label for="productDetails">รายละเอียดสินค้า:</label>
+                <textarea id="productDetails" name="productDetails" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="productPhoto">รูป:</label>
+                <input type="file" id="productPhoto" name="productPhoto" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">ที่อยู่:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">หมวดหมู่:</label>
+                <select id="category" name="category" required>
+                    <option value="ผัก">ผัก</option>
+                    <option value="ผลไม้">ผลไม้</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">บันทึก</button>
+        </form>
+    </div>
+
+    <script src="admin_adds.js"></script>
+</body>
+
+</html>

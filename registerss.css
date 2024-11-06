@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 10px;
+    background: linear-gradient(115deg, #9bcb88 20%, #7fa66d 80%);
+}
+
+.container {
+    width: 50%;
+    background: #fff;
+    padding: 25px 40px 10px 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    /* จัดเนื้อหาให้กึ่งกลาง */
+}
+
+.logo {
+    width: 100px;
+    /* ขนาดโลโก้ */
+    height: 100px;
+    /* ขนาดโลโก้ */
+    border-radius: 50%;
+    /* ทำให้เป็นวงกลม */
+    border: 3px solid#7fa66d;
+    /* เพิ่มกรอบสี */
+    margin-bottom: 20px;
+    /* เพิ่มระยะห่างด้านล่าง */
+}
+
+.container form {
+    padding: 30px 0 0 0;
+}
+
+.container form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.container form input {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.container form input:focus {
+    border-bottom: 2px solid #3498db;
+    outline: none;
+}
+
+.container form button {
+    width: 100%;
+    padding: 10px;
+    background: -webkit-linear-gradient(right, #9bcb88, #7fa66d);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.4s;
+}
+
+.container form button:hover {
+    background: -webkit-linear-gradient(right, #9bcb88,
+            #7fa66d);
+}
+
+.back-link {
+    display: block;
+    text-align: left;
+    color: #3498db;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}

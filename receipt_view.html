@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ใบเสร็จ</title>
+    <link rel="stylesheet" href="receipt_view.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>ใบเสร็จ</h1>
+    </div>
+
+    <div id="receiptContainer">
+        <img src="uploads/logo.png" alt="Logo" class="logo">
+        <p><span>หมายเลขใบเสร็จ:</span> <span id="receiptId"></span></p>
+        <p><span>หมายเลขคำสั่งซื้อ:</span> <span id="orderId"></span></p>
+        <p><span>ชื่อสินค้า:</span> <span id="productName"></span></p>
+        <p><span>ชื่อผู้รับใบเสร็จ:</span> <span id="receiptName"></span></p>
+        <p><span>หมายเลขโทรศัพท์:</span> <span id="telephone"></span></p>
+        <p><span>เวลาออกใบเสร็จ:</span> <span id="receiptTime"></span></p>
+        <p><span>วันที่ออกใบเสร็จ:</span> <span id="receiptDate"></span></p>
+        <div class="receipt-footer">
+            <p>ขอบคุณที่ใช้บริการกับเรา</p>
+            <p>Project Store</p>
+        </div>
+    </div>
+
+    <button id="backButton">กลับ</button>
+
+    <script src="receipt_viewss.js"></script>
+</body>
+
+</html>

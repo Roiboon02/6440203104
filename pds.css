@@ -1,0 +1,114 @@
+body {
+    background-color: #9bcb88;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5a6d3d;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.header-right {
+    margin-left: auto;
+    /* เลื่อนปุ่มล็อคอินไปทางขวาสุด */
+}
+
+.header img.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#backButton {
+    padding: 10px 20px;
+    /* ขนาดของปุ่ม */
+    background-color: #7fa66d;
+    /* สีพื้นหลัง */
+    color: #fff;
+    /* สีตัวอักษร */
+    border: none;
+    /* ไม่มีเส้นขอบ */
+    border-radius: 5px;
+    /* มุมโค้ง */
+    cursor: pointer;
+    /* แสดงว่าคลิกได้ */
+    font-size: 16px;
+    /* ขนาดตัวอักษร */
+    transition: background-color 0.3s, transform 0.3s;
+    /* เอฟเฟกต์เปลี่ยนสีพื้นหลังและการขยาย */
+    margin-left: 20px;
+    /* เพิ่มระยะห่างจากโลโก้ */
+}
+
+#backButton:hover {
+    background-color: #6a9e5d;
+    /* เปลี่ยนสีเมื่อชี้เมาส์ */
+    transform: scale(1.05);
+}
+
+#loginButton {
+    padding: 10px 20px;
+    background-color: #7fa66d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#loginButton:hover {
+    background-color: #6b9259;
+}
+
+.product-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    border: 2px solid #9bcb88;
+    border-radius: 10px;
+    background-color: white;
+    margin: 20px;
+}
+
+.product-image img {
+    max-width: 600px;
+    /* ปรับขนาดใหญ่ขึ้น */
+    height: auto;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.product-info {
+    max-width: 600px;
+}
+
+.buy-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.buy-button {
+    background-color: #9bcb88;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buy-button:hover {
+    background-color: #7fa66d;
+}
+
+.page-title {
+    font-size: 24px;
+    color: white;
+    margin-left: 20px;
+    /* จัดระยะห่างจากโลโก้ */
+    flex-grow: 1;
+    text-align: center;
+    /* จัดให้อยู่ตรงกลาง */
+}

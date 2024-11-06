@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลสมาชิก</title>
+    <link rel="stylesheet" href="am.css">
+</head>
+
+<body>
+    <div class="header">
+        <button id="backButton">กลับไปยังหน้าหลัก</button>
+        <h1>ข้อมูลสมาชิก</h1>
+        <button id="logoutButton">ออกจากระบบ</button>
+    </div>
+
+    <div id="member-list" class="member-list"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('user'));
+
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            if (user.role !== 'admin') {
+                window.location.href = 'dashboard.html';
+                return;
+            }
+
+            document.getElementById('logoutButton').addEventListener('click', () => {
+                localStorage.removeItem('user');
+                window.location.href = 'login.html';
+            });
+
+            document.getElementById('backButton').addEventListener('click', () => {
+                window.location.href = 'admin.html'; // กลับไปยังหน้าหลัก
+            });
+
+            fetchMembers();
+        });
+
+        function fetchMembers() {
+            fetch('fetch_members.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (!Array.isArray(data)) {
+                        console.error('Error fetching members:', data);
+                        return;
+                    }
+                    const memberList = document.getElementById('member-list');
+                    memberList.innerHTML = data.map(member => `
+                        <div class="member-item">
+                            <p>ID: ${member.member_id}</p>
+                            <p>Email: ${member.email}</p>
+                            <p>ชื่อ: ${member.name}</p>
+                            <p>โทรศัพท์: ${member.telephone}</p>
+                            <p>ที่อยู่: ${member.address}</p>
+                        </div>
+                    `).join('');
+                })
+                .catch(error => console.error('Error fetching members:', error));
+        }
+    </script>
+</body>
+
+</html>

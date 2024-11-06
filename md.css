@@ -1,0 +1,187 @@
+body {
+    background-color: #9bcb88;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5a6d3d;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    /* เพิ่มให้สามารถจัดการตำแหน่งไอคอนได้ */
+}
+
+.header input {
+    width: 60%;
+    padding: 8px;
+    border: 2px solid #9bcb88;
+    border-radius: 5px;
+}
+
+.header button {
+    padding: 10px;
+    background-color: #9bcb88;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header button:hover {
+    background-color: #7fa66d;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* เรียงสินค้าไปทางซ้าย */
+    padding: 20px;
+}
+
+.product-item {
+    background-color: #fff;
+    border: 2px solid #9bcb88;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    /* เพิ่มระยะห่างระหว่างสินค้า */
+    width: calc(30% - 20px);
+    /* กำหนดความกว้างให้พอเหมาะ */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+    width: 100%;
+    /* ให้รูปภาพมีความกว้าง 100% ของบล็อคสินค้า */
+    height: 150px;
+    /* กำหนดความสูงให้เป็นค่าคงที่ */
+    object-fit: cover;
+    /* ปรับขนาดรูปภาพให้เต็มพื้นที่และตัดส่วนที่เกิน */
+    border-radius: 10px;
+    /* รัศมีมุมของรูปภาพ */
+}
+
+.product-item p {
+    margin: 10px 0;
+}
+
+.product-item button {
+    background-color: #9bcb88;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-item button:hover {
+    background-color: #7fa66d;
+}
+
+/* Styles for login and dashboard pages */
+.login-container,
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+.login-container form,
+.dashboard-container {
+    background-color: #fff;
+    border: 2px solid #9bcb88;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.login-container form img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.login-container label,
+.dashboard-container p {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #9bcb88;
+    border-radius: 5px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #9bcb88;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.login-container button:hover,
+.dashboard-container button:hover {
+    background-color: #7fa66d;
+}
+
+.form-container {
+    background-color: #5a6d3d;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.form-container img.logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.form-container input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 2px solid #9bcb88;
+    border-radius: 5px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #9bcb88;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #7fa66d;
+}
+
+.form-container button:nth-child(3) {
+    background-color: #7fa66d;
+    margin-top: 10px;
+}

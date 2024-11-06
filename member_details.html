@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลสมาชิก</title>
+    <link rel="stylesheet" href="dm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <input type="text" id="searchInput" placeholder="ค้นหา...">
+        <button id="searchButton">ค้นหา</button>
+
+        <button id="sellButton">ขายสินค้า</button>
+
+        <div class="user-icon" id="userIcon">
+            <i class="fa-solid fa-user" onclick="toggleMenu()"></i>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="member_details.html" onclick="showMemberInfo()">ข้อมูลสมาชิก</a>
+                <a href="member_dashboard.html">สินค้าของคุณ</a>
+                <a href="order_list.html">รายการสั่งซื้อ</a>
+                <a href="order_history.html">ดูประวัติการสั่งซื้อ</a>
+                <a href="#" id="logoutButton">ออกจากระบบ</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+        <button onclick="goBack()" style="font-size: 20px; margin-left: 10px;">
+            <i class="fa-solid fa-arrow-left"></i> กลับ
+        </button>
+    </div>
+
+    <div class="dashboard-container">
+        <div class="user-details">
+            <p style="text-align: center;">
+                <i class="fa-solid fa-user" style="font-size: 50px; color: #5a6d3d; margin-bottom: 20px;"></i>
+            </p>
+            <p>
+                <strong>อีเมล:</strong> <span id="userEmail"></span>
+            </p>
+            <p><strong>ชื่อ:</strong> <span id="userFullName"></span></p>
+            <p><strong>เบอร์โทรศัพท์:</strong> <span id="userTelephone"></span></p>
+            <p><strong>ที่อยู่:</strong> <span id="userAddress"></span></p>
+        </div>
+    </div>
+
+    <script src="bd.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('user'));
+
+            // Set user details on the member info page
+            if (user) {
+                document.getElementById('userEmail').textContent = user.email;
+                document.getElementById('userFullName').textContent = user.name;
+                document.getElementById('userTelephone').textContent = user.telephone;
+                document.getElementById('userAddress').textContent = user.address;
+            }
+
+            // Event listener for logout button
+            document.getElementById('logoutButton').addEventListener('click', () => {
+                localStorage.removeItem('user');
+                window.location.href = 'login.html';
+            });
+
+            // Fetch products and categories if needed
+            fetchProducts();
+            fetchCategories();
+        });
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.classList.toggle('show');
+        }
+
+        // Fetch products and categories functions remain the same
+    </script>
+    <style>
+        .user-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .user-icon i {
+            font-size: 30px;
+            color: white;
+            margin-left: -50px;
+        }
+
+        .user-menu {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background-color: #fff;
+            border: 1px solid #9bcb88;
+            border-radius: 5px;
+            padding: 10px;
+            width: 150px;
+            z-index: 10;
+        }
+
+        .user-menu.hidden {
+            display: none;
+        }
+
+        .user-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .user-menu li {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .user-menu li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2 2px 10px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            z-index: 1;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .dashboard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Center the content horizontally */
+            justify-content: center;
+            /* Center the content vertically */
+            height: calc(60vh - 100px);
+            /* Adjust height as needed */
+            padding: 20px;
+            margin: 0 auto;
+            /* Center the container */
+            max-width: 500px;
+            /* Set a max width for the container */
+            background-color: #fff;
+            /* Add a background color */
+            border: 2px solid #9bcb88;
+            /* Add a border */
+            border-radius: 10px;
+            /* Round the corners */
+        }
+    </style>
+</body>
+
+</html>
